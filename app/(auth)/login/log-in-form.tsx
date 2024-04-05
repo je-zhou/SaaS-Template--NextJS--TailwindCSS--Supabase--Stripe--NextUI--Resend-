@@ -71,7 +71,7 @@ export function LogInForm() {
           description: "Logging you in...",
         })
   
-        router.push("/protected");
+        router.push("/");
 
       }
 
