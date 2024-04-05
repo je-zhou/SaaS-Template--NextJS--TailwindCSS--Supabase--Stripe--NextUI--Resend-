@@ -2,6 +2,9 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import {Providers} from "./providers";
 
+import { Toaster } from "@/components/ui/toaster"
+
+
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
@@ -23,6 +26,7 @@ export default function RootLayout({
         <main className="min-h-screen flex flex-col items-center max-w-screen-2xl w-full">
           <Providers>
             {children}
+            <Toaster />
           </Providers>
         </main>
       </body>
