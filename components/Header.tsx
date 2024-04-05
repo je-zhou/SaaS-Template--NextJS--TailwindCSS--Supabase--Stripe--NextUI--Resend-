@@ -1,44 +1,37 @@
-import NextLogo from "./NextLogo";
-import SupabaseLogo from "./SupabaseLogo";
+"use client";
+import { motion } from "framer-motion";
+import NextJS from "./TechStack/NextJS";
+import { BrandGrid } from "./TechStack/TileGrid";
+import { IconBrandPrisma, IconBrandStripe, IconBrandSupabase, IconBrandTailwind, IconMail, IconRecordMail } from "@tabler/icons-react";
+import { ShadCnSVG } from "./TechStack/ShadCN";
+import { HeroHighlight, Highlight } from "./ui/hero-highlight";
+import { LampContainer } from "./ui/lamp";
 
 export default function Header() {
   return (
-    <div className="flex flex-col gap-16 items-center">
-      <div className="flex gap-8 justify-center items-center">
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          rel="noreferrer"
+    <div className="flex flex-col gap-16 items-center w-full">
+      <HeroHighlight>
+        <motion.h1
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: [20, -5, 0],
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.4, 0.0, 0.2, 1],
+          }}
+          className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
         >
-          <SupabaseLogo />
-        </a>
-        <span className="border-l rotate-45 h-6" />
-        <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-          <NextLogo />
-        </a>
-      </div>
-      <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
-        The fastest way to build apps with{" "}
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>{" "}
-        and{" "}
-        <a
-          href="https://nextjs.org/"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Next.js
-        </a>
-      </p>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
+          The ultimate SaaS template start {" "}
+          <Highlight className="text-black dark:text-white">
+            shipping code fast
+          </Highlight>
+        </motion.h1>
+      </HeroHighlight>  
     </div>
   );
 }
