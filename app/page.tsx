@@ -1,12 +1,9 @@
 import AuthButton from "../components/AuthButton";
-import Header from "@/components/Header";
-import TechStack from "@/components/TechStack/TechStack";
-import { LampContainer } from "@/components/ui/lamp";
-import { motion } from "framer-motion";
-
+import HeaderDemo from "@/components/Header";
+import { SocialProofDemo } from "@/components/SocialProof/SocialProof";
+import TechStackDemo from "@/components/TechStack/TechStack";
 
 export default async function Index() {
-  
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
@@ -14,15 +11,18 @@ export default async function Index() {
           <AuthButton />
         </div>
       </nav>
-      <div className="animate-in flex-1 flex flex-col gap-20 max-w-screen-xl w-full px-3">
-        <Header />
-        <main className="flex-1 flex flex-col">
-          <TechStack></TechStack>
-          
+      <div className="animate-in flex-1 flex flex-col gap-20 px-3">
+        {/* Header */}
+        <HeaderDemo />
+        <main className="flex-1 flex flex-col space-y-24 lg:space-y-40 xl:space-y-60 items-center">
+          <div className="w-full">
+            <TechStackDemo/>
+          </div>
           <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
+          <SocialProofDemo/>
         </main>
-
       </div>
+      {/* Footer */}
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
           Brought to you by{" "}

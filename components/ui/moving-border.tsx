@@ -8,7 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/libs/utils";
 
 export function MovingBorderParent({
   borderRadius = "1.75rem",

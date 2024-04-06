@@ -22,7 +22,7 @@ import {
 import { Input } from "@/components/ui/input"
 import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast";
-import { createClient } from "@/utils/supabase/client";
+import { createClient } from "@/libs/clients/supabase/client";
 import { useRouter } from "next/navigation";
 
 

@@ -1,13 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import NextJS from "./TechStack/NextJS";
-import { BrandGrid } from "./TechStack/TileGrid";
-import { IconBrandPrisma, IconBrandStripe, IconBrandSupabase, IconBrandTailwind, IconMail, IconRecordMail } from "@tabler/icons-react";
-import { ShadCnSVG } from "./TechStack/ShadCN";
+import { IconBrandGithub, IconBrandInstagram, IconBrandMedium, IconBrandPrisma, IconBrandStripe, IconBrandSupabase, IconBrandTailwind, IconMail, IconRecordMail } from "@tabler/icons-react";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
-import { LampContainer } from "./ui/lamp";
+import Code from "./Code";
 
-export default function Header() {
+export default function HeaderDemo() {
   return (
     <div className="flex flex-col gap-16 items-center w-full">
       <HeroHighlight>
@@ -26,10 +23,27 @@ export default function Header() {
           }}
           className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
         >
-          The ultimate SaaS template start {" "}
-          <Highlight className="text-black dark:text-white">
-            shipping code fast
-          </Highlight>
+          <div className="space-y-8 flex flex-col items-center">
+            <div>
+              The ultimate SaaS template to start {" "}
+              <Highlight className="text-black dark:text-white">
+                shipping code fast
+              </Highlight>
+            </div>
+            <p className="text-xl max-w-xl font-normal pb-8">Don't worry about the set up. Start building powerful modern web apps in seconds.</p>
+            <Code code="git clone https://github.com/je-zhou/The-Solopreneur-Saas-Template.git"/>
+            <div className="flex flex-row space-x-12 opacity-50 pt-8">
+              <a href="https://github.com/je-zhou/The-Solopreneur-Saas-Template" target="_blank">
+                <IconBrandGithub/>
+              </a>
+              <a href="https://github.com/je-zhou/The-Solopreneur-Saas-Template" target="_blank">
+                <IconBrandMedium/>
+              </a>
+              <a href="https://github.com/je-zhou/The-Solopreneur-Saas-Template" target="_blank">
+                <IconBrandInstagram/>
+              </a>
+            </div>
+          </div>
         </motion.h1>
       </HeroHighlight>  
     </div>

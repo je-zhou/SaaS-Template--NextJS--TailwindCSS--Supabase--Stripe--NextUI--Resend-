@@ -1,5 +1,5 @@
 import * as React from "react"
-import { cn } from "@/utils/cn"
+import { cn } from "@/libs/utils"
 import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
 
 export interface InputProps

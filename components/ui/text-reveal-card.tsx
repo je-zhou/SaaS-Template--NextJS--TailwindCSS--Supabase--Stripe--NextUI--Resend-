@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState, memo } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { cn } from "@/utils/cn";
+import { cn } from "@/libs/utils";
 
 export const TextRevealCard = ({
   text,
@@ -67,7 +67,7 @@ export const TextRevealCard = ({
       onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-[#1d1c20] border border-white/[0.08] w-[40rem] rounded-lg p-8 relative overflow-hidden",
+        "bg-[#1d1c20] border border-white/[0.08] rounded-lg p-8 relative overflow-hidden",
         className
       )}
     >
