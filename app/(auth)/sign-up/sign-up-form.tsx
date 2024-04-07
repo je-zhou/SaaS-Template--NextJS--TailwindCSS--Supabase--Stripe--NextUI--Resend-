@@ -210,7 +210,7 @@ export function SignupForm({origin} : SignupFormProps) {
       </Form>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       <div className="text-sm text-right">
-        <p>Already have an account? <Link href={"/login"} className="underline text-white">Log in</Link> instead</p>
+        <p>Already have an account? <Link href={"/login"} className="underline">Log in</Link> instead</p>
       </div>
     </div>
   );

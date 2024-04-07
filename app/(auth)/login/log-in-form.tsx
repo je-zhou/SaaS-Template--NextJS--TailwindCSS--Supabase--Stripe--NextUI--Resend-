@@ -191,7 +191,7 @@ export function LogInForm() {
       </Form>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       <div className="text-sm text-right">
-        <p>Don't have an account? <Link href={"/sign-up"} className="underline text-white">Sign Up</Link> instead</p>
+        <p>Don't have an account? <Link href={"/sign-up"} className="underline">Sign Up</Link> instead</p>
       </div>
     </div>
   );
