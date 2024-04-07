@@ -5,7 +5,7 @@ import { InfiniteMovingCards, MovingCardTile } from "../ui/infinite-moving-cards
 
 export function SocialProofDemo() {
   return (
-    <div className="flex flex-col items-center space-y-4 px-6">
+    <div className="flex flex-col items-center space-y-4 px-8">
       <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65 text-center">What Developers Are Saying</h1>
       <p className="md:text-lg lg:text-xl opacity-50 text-center">Have a look at what the community thinks about this template</p>
       <div className="hidden xl:flex rounded-md flex-col antialiased items-center justify-center relative overflow-hidden pt-4 lg:pt-12">

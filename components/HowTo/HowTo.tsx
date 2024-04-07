@@ -5,7 +5,7 @@ import Code from "../Code";
 
 export function HowToDemo() {
   return (
-    <div className="flex flex-col space-y-4 px-6 w-full">
+    <div className="flex flex-col space-y-4 px-8 w-full">
       <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65">Get Started Today</h1>
       <p className="md:text-lg lg:text-xl opacity-50">Start building with Stripe, Supabase, and Prisma in 3 quick steps</p>
       <div className="grid lg:grid-cols-2 gap-4 md:gap-10 pt-4 lg:pt-12">

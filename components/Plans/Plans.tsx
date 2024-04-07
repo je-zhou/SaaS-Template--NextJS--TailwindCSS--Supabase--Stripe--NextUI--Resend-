@@ -16,7 +16,7 @@ export default async function Plans() {
   let gridCols = `md:grid-cols-${products.length}`;
 
   return (
-    <div className="max-w-screen-xl px-6 py-8 sm:py-12 lg:px-8 lg:py-16 flex flex-col items-center space-y-4">
+    <div className="max-w-screen-xl px-8 py-8 sm:py-12 lg:px-8 lg:py-16 flex flex-col items-center space-y-4">
       <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65">Donate</h1>
       <p className="md:text-lg lg:text-xl opacity-50 max-w-2xl text-center">
         Has this template helped you out and you want to show your thanks? 
