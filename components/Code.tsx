@@ -49,11 +49,11 @@ export default function Code({ code, className, copyText }: { code: string, clas
   };
 
   return (
-    <pre className={cn("bg-gray-800 dark:bg-[#18181B] text-white relative rounded-md border border-white/10 p-4 text-sm font-medium h-fit w-fit", className)}>
+    <pre className={cn("bg-gray-800 dark:bg-[#18181B] text-white relative rounded-md border border-white/10 p-4 text-sm font-medium h-fit w-fit overflow-clip", className)}>
       <code>{code}</code>
       <Button
         onClick={copy}
-        className="p-2 rounded-md absolute right-2 top-2 bg-gray-600 hover:bg-gray-500 transition h-fit"
+        className="p-2 rounded-md absolute right-2 top-2 bg-gray-600 hover:bg-gray-500 transition h-fit text-white"
       >
         {icon}
       </Button>

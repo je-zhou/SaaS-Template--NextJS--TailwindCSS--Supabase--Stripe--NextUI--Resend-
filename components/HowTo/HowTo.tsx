@@ -5,16 +5,16 @@ import Code from "../Code";
 
 export function HowToDemo() {
   return (
-    <div className="flex flex-col space-y-4 px-6  w-full">
+    <div className="flex flex-col space-y-4 px-6 w-full">
       <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65">Get Started Today</h1>
       <p className="md:text-lg lg:text-xl opacity-50">Start building with Stripe, Supabase, and Prisma in 3 quick steps</p>
-      <div className="grid lg:grid-cols-2 gap-4 md:gap-10 max-w-[60rem] pt-4 lg:pt-12">
+      <div className="grid lg:grid-cols-2 gap-4 md:gap-10 pt-4 lg:pt-12">
         <div className="space-y-4 max-w-lg">
           <p className="text-lg opacity-80 underline">Step 1</p>
           <p className="text-base opacity-75">Fork this repository to access the source code</p>
         </div>
         <Code
-          className="w-[19rem] sm:w-[25rem] items-center lg:mt-10"
+          className="w-full items-center lg:mt-10"
           code={
             `git clone ...`
           }
@@ -34,7 +34,7 @@ export function HowToDemo() {
           </div>
         </div>
         <Code
-          className="w-[19rem] sm:w-[25rem] lg:mt-10"
+          className="w-full lg:mt-10"
           code={
             `#.env
 
@@ -60,7 +60,7 @@ NEXT_PUBLIC_RESEND_API_KEY=`
           </div>
         </div>
         <Code
-          className="w-[19rem] sm:w-[25rem] lg:mt-10"
+          className="w-full lg:mt-10"
           code={
             `npm install 
 npm run dev`
