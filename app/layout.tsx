@@ -21,15 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={GeistSans.className + " dark"}>
+    <html lang="en" className={GeistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground flex items-center justify-center w-full">
-        <main className="min-h-screen flex flex-col items-center max-w-screen-2xl w-full">
-          <Providers>
-            {children}
-            <Toaster />
-          </Providers>
-        </main>
+        <Providers>
+            <main className="min-h-screen flex flex-col items-center max-w-screen-2xl w-full">
+              {children}
+              <Toaster />
+            </main>
+        </Providers>
       </body>
+
     </html>
   );
 }

@@ -45,11 +45,11 @@ export default function Code({ code }: { code: string }) {
   };
 
   return (
-    <pre className="bg-neutral-700 rounded-md p-4 relative text-sm font-medium flex items-center space-x-4 w-fit">
+    <pre className="bg-foreground text-background rounded-md p-4 relative text-sm font-medium flex items-center space-x-4 w-fit">
       <code>{code}</code>
       <button
         onClick={copy}
-        className=" p-2 rounded-md bg-foreground/20 hover:bg-foreground/40"
+        className=" p-2 rounded-md bg-background/20 hover:bg-background/40"
       >
         {icon}
       </button>

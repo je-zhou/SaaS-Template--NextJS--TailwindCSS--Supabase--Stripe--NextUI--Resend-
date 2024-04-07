@@ -51,7 +51,7 @@ export const BrandGrid = ({
               />
             )}
           </AnimatePresence>
-          <Card className="bg-black relative z-20 rounded-2xl">
+          <Card className="bg-card relative z-20 rounded-2xl">
             <CardHeader className="h-40">
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>
