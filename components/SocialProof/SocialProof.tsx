@@ -5,9 +5,10 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
 export function SocialProofDemo() {
   return (
-    <div className="flex flex-col items-center space-y-20">
-      <h1 className="text-4xl opacity-65">What developers are saying</h1>
-      <div className="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+    <div className="flex flex-col items-center space-y-4">
+      <h1 className="text-4xl opacity-65">What Developers Are Saying</h1>
+      <p className="text-xl opacity-50">Have a look at what the community thinks about this template</p>
+      <div className="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden pt-12">
         <InfiniteMovingCards
           items={testimonials}
           direction="right"

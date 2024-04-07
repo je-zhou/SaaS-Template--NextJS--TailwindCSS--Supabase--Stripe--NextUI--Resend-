@@ -5,6 +5,7 @@ import TechStackDemo from "@/components/TechStack/TechStack";
 import Divider from "@/components/Divider";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { HowToDemo } from "@/components/HowTo/HowTo";
+import { FAQDemo } from "@/components/FAQ/FAQ";
 
 
 export default async function Index() {
@@ -23,6 +24,8 @@ export default async function Index() {
           <SocialProofDemo/>
           <Divider/>
           <Plans/>
+          <Divider/>
+          <FAQDemo/>
         </div>
       </div>
     </TracingBeam>

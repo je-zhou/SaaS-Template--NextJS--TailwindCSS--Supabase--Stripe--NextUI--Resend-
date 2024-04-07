@@ -50,7 +50,7 @@ export default function Code({ code, className }: { code: string, className?: st
       <code>{code}</code>
       <button
         onClick={copy}
-        className="p-2 rounded-md bg-background/20 hover:bg-background/40 h-fit"
+        className="p-2 rounded-md bg-white/20 hover:bg-whited/40 h-fit"
       >
         {icon}
       </button>
