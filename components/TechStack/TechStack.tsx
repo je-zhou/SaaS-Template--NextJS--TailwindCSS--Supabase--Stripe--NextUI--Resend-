@@ -61,13 +61,14 @@ export default function TechStackDemo() {
   ]
 
   return (
-      <div className=' grid grid-cols-5 max-w-screen-2xl'>
+      <div className='grid grid-cols-5 max-w-screen-2xl'>
         <div className='z-50 col-span-2 pl-8 space-y-2'>
           <h1 className='text-2xl font-medium pb-4 opacity-65'>The Tech Stack</h1>
           <p className='opacity-75'>A modern tech stack to handle everything from payments to building UIs at lighting speed ⚡</p>
-          <div className='space-y-4 pt-5'>
+          <div className='pt-5'>
             
             <FollowerPointerWrapper
+              className='py-2'
               title={
                 <div className='flex flex-row items-center space-x-2 px-2'>
                   <IconBrandSupabase/>
@@ -82,8 +83,9 @@ export default function TechStackDemo() {
             </FollowerPointerWrapper>
 
             <FollowerPointerWrapper
+              className='py-2'
               title={
-                <div className='flex flex-row items-center space-x-2 px-2'>
+                <div className='flex flex-row items-center space-x-2'>
                   <ShadCnSVG/>
                   <IconBrandTailwind/>
                   <p>ShadCN + Tailwind</p>
@@ -97,8 +99,9 @@ export default function TechStackDemo() {
             </FollowerPointerWrapper>
       
             <FollowerPointerWrapper
+              className='py-2'
               title={
-                <div className='flex flex-row items-center space-x-2 px-2'>
+                <div className='flex flex-row items-center space-x-2'>
                   <IconMail/>
                   <p>Resend</p>
                 </div>
@@ -111,8 +114,9 @@ export default function TechStackDemo() {
             </FollowerPointerWrapper>
 
             <FollowerPointerWrapper
+              className='py-2'
               title={
-                <div className='flex flex-row items-center space-x-2 px-2'>
+                <div className='flex flex-row items-center space-x-2'>
                   <IconBrandSupabase/>
                   <IconBrandPrisma></IconBrandPrisma>
                   <p>Supabase + Prisma</p>
@@ -126,6 +130,7 @@ export default function TechStackDemo() {
             </FollowerPointerWrapper>
 
             <FollowerPointerWrapper
+              className='py-2'
               title={
                 <div className='flex flex-row items-center space-x-2 px-2'>
                   <IconBrandStripe/>

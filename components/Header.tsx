@@ -30,7 +30,7 @@ export default function HeaderDemo() {
             </Highlight>
           </div>
           <p className="text-xl max-w-xl font-normal pb-8">Don't worry about the set up. Start building powerful modern web apps in seconds.</p>
-          <Code code="git clone https://github.com/je-zhou/The-Solopreneur-Saas-Template.git"/>
+          <Code className="items-center" code="git clone https://github.com/je-zhou/The-Solopreneur-Saas-Template.git"/>
           <div className="flex flex-row space-x-12 opacity-60 pt-8">
             <a href="https://github.com/je-zhou/The-Solopreneur-Saas-Template" target="_blank">
               <IconBrandGithub/>

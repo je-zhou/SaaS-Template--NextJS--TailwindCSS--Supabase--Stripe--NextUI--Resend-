@@ -4,6 +4,7 @@ import { SocialProofDemo } from "@/components/SocialProof/SocialProof";
 import TechStackDemo from "@/components/TechStack/TechStack";
 import Divider from "@/components/Divider";
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import { HowToDemo } from "@/components/HowTo/HowTo";
 
 
 export default async function Index() {
@@ -16,6 +17,8 @@ export default async function Index() {
         </div>
         <div className="flex-1 flex flex-col space-y-24 lg:space-y-40 xl:space-y-80 items-center pb-72">
           <TechStackDemo/>
+          <Divider/>
+          <HowToDemo/>
           <Divider/>
           <SocialProofDemo/>
           <Divider/>

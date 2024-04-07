@@ -7,7 +7,7 @@ export function SocialProofDemo() {
   return (
     <div className="flex flex-col items-center space-y-20">
       <h1 className="text-4xl opacity-65">What developers are saying</h1>
-      <div className="rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
           items={testimonials}
           direction="right"

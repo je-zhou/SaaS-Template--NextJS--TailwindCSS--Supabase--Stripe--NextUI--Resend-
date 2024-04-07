@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/libs/utils";
 import { useState } from "react";
 
 const CopyIcon = () => (
@@ -35,7 +36,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-export default function Code({ code }: { code: string }) {
+export default function Code({ code, className }: { code: string, className?: string }) {
   const [icon, setIcon] = useState(CopyIcon);
 
   const copy = async () => {
@@ -45,11 +46,11 @@ export default function Code({ code }: { code: string }) {
   };
 
   return (
-    <pre className="bg-foreground text-background rounded-md p-4 relative text-sm font-medium flex items-center space-x-4 w-fit">
+    <pre className={cn("bg-gray-800 dark:bg-[#18181B] text-white rounded-md border border-white/10 p-4 relative text-sm font-medium flex space-x-4 h-fit w-fit justify-between", className)}>
       <code>{code}</code>
       <button
         onClick={copy}
-        className=" p-2 rounded-md bg-background/20 hover:bg-background/40"
+        className="p-2 rounded-md bg-background/20 hover:bg-background/40 h-fit"
       >
         {icon}
       </button>
