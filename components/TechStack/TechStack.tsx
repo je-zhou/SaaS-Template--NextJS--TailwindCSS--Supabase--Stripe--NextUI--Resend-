@@ -1,14 +1,17 @@
+"use client" 
+
 import React from 'react'
 import { BrandGrid } from "@/components/TechStack/TileGrid";
 import NextJS from "@/components/TechStack/NextJS";
 import { IconBrandPrisma, IconBrandStripe, IconBrandSupabase, IconBrandTailwind, IconCheck, IconMail, IconRecordMail } from "@tabler/icons-react";
 import { ShadCnSVG } from "@/components/TechStack/ShadCN";
-import { LampContainer } from '../ui/lamp';
+import { Spotlight } from '../ui/spotlight';
+import { FollowerPointerWrapper } from '../ui/following-pointer';
 
 export default function TechStackDemo() {
   const brands = [
     {
-      title: <div className="flex flex-row space-x-2 items-center">
+      title: <div className="flex flex-row items-center">
         <IconBrandPrisma/>
         <p>Prisma</p>
       </div>,
@@ -58,36 +61,84 @@ export default function TechStackDemo() {
   ]
 
   return (
-    
-    <div className="overflow-x-clip">
-      <LampContainer>
-        <></>
-      </LampContainer>
-      <div className='-mt-60 grid grid-cols-5'>
+      <div className=' grid grid-cols-5 max-w-screen-2xl'>
         <div className='z-50 col-span-2 pl-8 space-y-2'>
           <h1 className='text-2xl font-medium pb-4 opacity-65'>The Tech Stack</h1>
           <p className='opacity-75'>A modern tech stack to handle everything from payments to building UIs at lighting speed ⚡</p>
           <div className='space-y-4 pt-5'>
-            <div className='flex flex-row space-x-2 items-center'>
-              <IconCheck className='text-green-500'/>
-              <p className=''>User Authentication</p>
-            </div>
-            <div className='flex flex-row space-x-2 items-center'>
-              <IconCheck className='text-green-500'/>
-              <p className=''>Modern & Customisable UI Components</p>
-            </div>
-            <div className='flex flex-row space-x-2 items-center'>
-              <IconCheck className='text-green-500'/>
-              <p className=''>Email Notifications</p>
-            </div>
-            <div className='flex flex-row space-x-2 items-center'>
-              <IconCheck className='text-green-500'/>
-              <p className=''>Postgresql Database & Flexible ORM</p>
-            </div>
-            <div className='flex flex-row space-x-2 items-center'>
-              <IconCheck className='text-green-500'/>
-              <p className=''>Checkout & Payments</p>
-            </div>
+            
+            <FollowerPointerWrapper
+              title={
+                <div className='flex flex-row items-center space-x-2 px-2'>
+                  <IconBrandSupabase/>
+                  <p>Supabase Auth</p>
+                </div>
+              }
+            >
+              <div className='flex flex-row space-x-2 items-center'>
+                <IconCheck className='text-green-500'/>
+                <p className=''>User Authentication</p>
+              </div>
+            </FollowerPointerWrapper>
+
+            <FollowerPointerWrapper
+              title={
+                <div className='flex flex-row items-center space-x-2 px-2'>
+                  <ShadCnSVG/>
+                  <IconBrandTailwind/>
+                  <p>ShadCN + Tailwind</p>
+                </div>
+              }
+            >
+              <div className='flex flex-row space-x-2 items-center'>
+                <IconCheck className='text-green-500'/>
+                <p className=''>Modern & Customisable UI Components</p>
+              </div>
+            </FollowerPointerWrapper>
+      
+            <FollowerPointerWrapper
+              title={
+                <div className='flex flex-row items-center space-x-2 px-2'>
+                  <IconMail/>
+                  <p>Resend</p>
+                </div>
+              }
+            >
+              <div className='flex flex-row space-x-2 items-center'>
+                <IconCheck className='text-green-500'/>
+                <p className=''>Email Notifications</p>
+              </div>
+            </FollowerPointerWrapper>
+
+            <FollowerPointerWrapper
+              title={
+                <div className='flex flex-row items-center space-x-2 px-2'>
+                  <IconBrandSupabase/>
+                  <IconBrandPrisma></IconBrandPrisma>
+                  <p>Supabase + Prisma</p>
+                </div>
+              }
+            >
+              <div className='flex flex-row space-x-2 items-center'>
+                <IconCheck className='text-green-500'/>
+                <p className=''>Postgresql Database & Flexible ORM</p>
+              </div>
+            </FollowerPointerWrapper>
+
+            <FollowerPointerWrapper
+              title={
+                <div className='flex flex-row items-center space-x-2 px-2'>
+                  <IconBrandStripe/>
+                  <p>Stripe</p>
+                </div>
+              }
+            >
+              <div className='flex flex-row space-x-2 items-center'>
+                <IconCheck className='text-green-500'/>
+                <p className=''>Checkout & Payments</p>
+              </div>
+            </FollowerPointerWrapper>
+
           </div>
           
         </div>
@@ -96,7 +147,5 @@ export default function TechStackDemo() {
         </div>
         <BrandGrid items={brands} className="w-full col-span-5"></BrandGrid>
       </div>
-      
-    </div>
   )
 }

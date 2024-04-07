@@ -34,7 +34,7 @@ export default async function PlanTile({stripeProduct}: PlanTileProps) {
             <span className="text-sm font-normal opacity-50">{recurring ? "/"+priceObj?.recurring?.interval : "one time fee" }</span>
           </p>
           <Button
-            className="mt-4 w-full rounded border border-primary bg-primary text-center text-sm font-medium text-white hover:bg-transparent hover:text-primary"
+            className="mt-4 w-full rounded border border-primary bg-primary/90 text-center text-sm font-medium hover:bg-transparent hover:text-primary"
             size={"lg"}
           >
             Donate

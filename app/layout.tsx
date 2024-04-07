@@ -3,6 +3,8 @@ import "./globals.css";
 import {Providers} from "./providers";
 
 import { Toaster } from "@/components/ui/toaster"
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 
 const defaultUrl = process.env.VERCEL_URL
@@ -22,12 +24,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="bg-background text-foreground flex items-center justify-center w-full">
+      <body className="bg-background text-foreground">
         <Providers>
-          <main className="min-h-screen flex flex-col items-center max-w-screen-2xl w-full">
+          <Navbar/>
+          <main className="min-h-screen">
             {children}
-            <Toaster />
           </main>
+          <Footer/>
+          <Toaster />
         </Providers>
       </body>
 
