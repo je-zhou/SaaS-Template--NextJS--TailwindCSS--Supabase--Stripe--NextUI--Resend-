@@ -64,8 +64,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-background w-full">
-      <div className="w-full py-16 sm:px-6 lg:px-8 flex flex-col items-center">
-        <div className="max-w-screen-2xl flex flex-col items-center gap-4 rounded-lg bg-gradient-to-r from-primary via-primary/80 to-primary/90 p-6 shadow-lg sm:flex-row sm:justify-between w-full">
+      <div className="w-full py-16 px-6 lg:px-8 flex flex-col items-center">
+        <div className="max-w-screen-xl flex flex-col items-center gap-4 rounded-lg bg-gradient-to-r from-primary via-primary/80 to-primary/90 p-6 shadow-lg sm:flex-row sm:justify-between w-full">
           <strong className="text-xl text-primary-foreground/90 sm:text-xl"> Start your next project today </strong>
 
           <a

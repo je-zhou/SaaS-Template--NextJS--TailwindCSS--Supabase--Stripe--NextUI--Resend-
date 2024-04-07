@@ -1,20 +1,23 @@
 "use client";
 
 import React from "react";
-import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
+import { InfiniteMovingCards, MovingCardTile } from "../ui/infinite-moving-cards";
 
 export function SocialProofDemo() {
   return (
-    <div className="flex flex-col items-center space-y-4">
-      <h1 className="text-4xl opacity-65">What Developers Are Saying</h1>
-      <p className="text-xl opacity-50">Have a look at what the community thinks about this template</p>
-      <div className="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden pt-12">
+    <div className="flex flex-col items-center space-y-4 px-6">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65 text-center">What Developers Are Saying</h1>
+      <p className="md:text-lg lg:text-xl opacity-50 text-center">Have a look at what the community thinks about this template</p>
+      <div className="hidden xl:flex rounded-md flex-col antialiased items-center justify-center relative overflow-hidden pt-4 lg:pt-12">
         <InfiniteMovingCards
           items={testimonials}
           direction="right"
           speed="slow"
         />
       </div>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:hidden gap-4 pt-12 px-4">
+          {testimonials.map(item => <MovingCardTile key={item.name} item={item} className="w-full h-full"/>)}
+        </ul>
     </div>
   );
 }
@@ -22,31 +25,19 @@ export function SocialProofDemo() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "Next.js, Stripe, Prisma, Supabase - a powerhouse combo! 🚀 Prototyping made easy and fun with these tools. Major shoutout to this template for turning development into an exciting journey! ",
+    name: "Alvin Z",
+    title: "Software Dev",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+      "Just wrapped up a project using this template - and boy, was it a blast! Here's to making development feel more like a fun adventure!",
+    name: "Zac J",
+    title: "Software Dev",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+    quote: "You really don't need any other tools besides this template. I had my project up and running in a weekend.",
+    name: "Lebron J.",
+    title: "The GOAT | The King | Los Angeles Lakers",
   },
 ];

@@ -2,6 +2,7 @@
 
 import { cn } from "@/libs/utils";
 import { useState } from "react";
+import { Button } from "./ui/button";
 
 const CopyIcon = () => (
   <svg
@@ -36,24 +37,26 @@ const CheckIcon = () => (
   </svg>
 );
 
-export default function Code({ code, className }: { code: string, className?: string }) {
+export default function Code({ code, className, copyText }: { code: string, className?: string, copyText?: string }) {
   const [icon, setIcon] = useState(CopyIcon);
 
   const copy = async () => {
-    await navigator?.clipboard?.writeText(code);
+    const text = copyText ? copyText : code;
+
+    await navigator?.clipboard?.writeText(text);
     setIcon(CheckIcon);
     setTimeout(() => setIcon(CopyIcon), 2000);
   };
 
   return (
-    <pre className={cn("bg-gray-800 dark:bg-[#18181B] text-white rounded-md border border-white/10 p-4 relative text-sm font-medium flex space-x-4 h-fit w-fit justify-between", className)}>
+    <pre className={cn("bg-gray-800 dark:bg-[#18181B] text-white relative rounded-md border border-white/10 p-4 text-sm font-medium h-fit w-fit", className)}>
       <code>{code}</code>
-      <button
+      <Button
         onClick={copy}
-        className="p-2 rounded-md bg-white/20 hover:bg-whited/40 h-fit"
+        className="p-2 rounded-md absolute right-2 top-2 bg-gray-600 hover:bg-gray-500 transition h-fit"
       >
         {icon}
-      </button>
+      </Button>
     </pre>
   );
 }

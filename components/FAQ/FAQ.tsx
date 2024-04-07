@@ -8,9 +8,9 @@ import {
 
 export function FAQDemo() {
   return (
-    <div className="w-full max-w-3xl space-y-4 flex flex-col items-center">
-      <h1 className="text-4xl opacity-65">Have questions?</h1>
-      <p className="text-xl opacity-50">Check out the frequently asked questions below</p>
+    <div className="w-full max-w-3xl space-y-4 flex flex-col items-center px-6">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65">Have questions?</h1>
+      <p className="md:text-lg lg:text-xl opacity-50 text-center">Check out the frequently asked questions below</p>
       <Accordion type="single" collapsible className="opacity-70 pt-12 w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Is this template free?</AccordionTrigger>

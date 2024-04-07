@@ -5,23 +5,24 @@ import Code from "../Code";
 
 export function HowToDemo() {
   return (
-    <div className="flex flex-col space-y-4">
-      <h1 className="text-4xl opacity-65">Get Started Today</h1>
-      <p className="text-xl opacity-50">Start building with Stripe, Supabase, and Prisma in 3 quick steps</p>
-      <div className="grid md:grid-cols-2 w-full gap-4 md:gap-10 max-w-[60rem] py-12">
-      <div className="space-y-4">
+    <div className="flex flex-col space-y-4 px-6  w-full">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65">Get Started Today</h1>
+      <p className="md:text-lg lg:text-xl opacity-50">Start building with Stripe, Supabase, and Prisma in 3 quick steps</p>
+      <div className="grid lg:grid-cols-2 gap-4 md:gap-10 max-w-[60rem] pt-4 lg:pt-12">
+        <div className="space-y-4 max-w-lg">
           <p className="text-lg opacity-80 underline">Step 1</p>
           <p className="text-base opacity-75">Fork this repository to access the source code</p>
         </div>
         <Code
-          className="w-[30rem] items-center"
+          className="w-[19rem] sm:w-[25rem] items-center lg:mt-10"
           code={
-            `git clone ....`
+            `git clone ...`
           }
+          copyText="git clone https://github.com/je-zhou/The-Solopreneur-Saas-Template.git"
         />
         <div className="space-y-4">
           <p className="text-lg opacity-80 underline">Step 2</p>
-          <div  className="text-base opacity-75 space-y-2">
+          <div className="text-base opacity-75 space-y-2 max-w-lg">
             <p>Navigate into your project directory and rename <span className="text-cyan-500">.env.example</span> to <span className="text-cyan-500">.env</span>.</p>
             <p>Then set up your environmental variables.</p>
             <p>For help setting up your API keys and URLs, check out the helpful documentation guides from {" "}
@@ -33,7 +34,7 @@ export function HowToDemo() {
           </div>
         </div>
         <Code
-          className="w-[30rem]"
+          className="w-[19rem] sm:w-[25rem] lg:mt-10"
           code={
             `#.env
 
@@ -53,13 +54,13 @@ NEXT_PUBLIC_RESEND_API_KEY=`
         />
         <div className="space-y-4">
           <p className="text-lg opacity-80 underline">Step 3</p>
-          <div className="text-base opacity-75 space-y-2">
+          <div className="text-base opacity-75 space-y-2 max-w-lg">
             <p>Install your packages and you are done!</p>
             <p>Navigate to your local environment (usually <a className="underline" href="localhost:3000">localhost:3000</a>) to check out your project.</p>
           </div>
         </div>
         <Code
-          className="w-[30rem]"
+          className="w-[19rem] sm:w-[25rem] lg:mt-10"
           code={
             `npm install 
 npm run dev`
