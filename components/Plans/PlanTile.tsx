@@ -1,21 +1,45 @@
-import { getStripePrice } from '@/actions/getStripePrice'
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import Stripe from 'stripe'
 import { Button } from '../ui/button';
 import { CheckCircledIcon } from '@radix-ui/react-icons';
+import axios from 'axios';
+import { useToast } from '../ui/use-toast';
 
 interface PlanTileProps {
-  stripeProduct: Stripe.Product
+  stripeProduct: Stripe.Product,
+  stripePrice: Stripe.Price | undefined
 }
 
-export default async function PlanTile({stripeProduct}: PlanTileProps) {
-  const priceObj = await getStripePrice(stripeProduct.default_price);
-  const currency = priceObj ? priceObj.currency : "USD";
-  const unitAmount = priceObj ? priceObj.unit_amount ?? 0 : 0;
-  const recurring = priceObj ? priceObj.type == "recurring" : false;
+export default async function PlanTile({stripeProduct, stripePrice}: PlanTileProps) {
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast()
+  
+  const currency = stripePrice ? stripePrice.currency : "USD";
+  const unitAmount = stripePrice ? stripePrice.unit_amount ?? 0 : 0;
+  const recurring = stripePrice ? stripePrice.type == "recurring" : false;
 
-  async function checkOut() {
+  async function onCheckout(){
 
+    try {
+      setLoading(true);
+
+      const response = await axios.post(`/api/checkout/${stripePrice?.id}`);
+  
+      if (response.status!= 200) {
+        toast({title: "Something went wrong. Please try again later"});
+      }
+
+      window.location = response.data.url
+
+    } catch (error) {
+      toast({title: "Something went wrong. Please try again later"});
+      
+    } finally {
+      setLoading(false);
+
+    }
   }
 
   return (
@@ -31,11 +55,13 @@ export default async function PlanTile({stripeProduct}: PlanTileProps) {
         <div>
           <p className="mt-2 sm:mt-4">
             <strong className="text-3xl font-bold sm:text-4xl">${(unitAmount/100).toFixed(2)} </strong>
-            <span className="text-sm font-normal opacity-50">{recurring ? "/"+priceObj?.recurring?.interval : "one time fee" }</span>
+            <span className="text-sm font-normal opacity-50">{recurring ? "/"+stripePrice?.recurring?.interval : "one time fee" }</span>
           </p>
           <Button
             className="mt-4 w-full rounded border border-primary bg-primary/90 text-center text-sm font-medium hover:bg-transparent hover:text-primary"
             size={"lg"}
+            onClick={() => onCheckout()}
+            disabled={loading}
           >
             Donate
           </Button>

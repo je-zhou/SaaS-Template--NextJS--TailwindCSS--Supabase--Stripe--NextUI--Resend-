@@ -7,7 +7,7 @@ export default function SignUpPage() {
   const origin = headers().get("origin") ?? "";
 
   return (
-    <div className='h-screen flex items-center justify-center'>
+    <div className='min-h-[90vh] flex items-center justify-center'>
       <div className="w-fit space-y-2 flex flex-col items-end">
         <BackButton/>
         <SignupForm origin={origin}/>
