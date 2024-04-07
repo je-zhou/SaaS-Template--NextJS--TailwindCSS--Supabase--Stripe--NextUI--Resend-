@@ -5,10 +5,11 @@ import { IconBrandNextjs } from "@tabler/icons-react";
 
 export default function NextJS() {
   return (
-    <div className="flex items-center justify-center bg-card-foreground rounded-2xl w-full">
+    <div className="flex items-center justify-center bg-card-foreground rounded-2xl w-full ">
       <TextRevealCard
         text="Frontend & Backend"
         revealText="Webhosting"
+        
       >
         <TextRevealCardTitle>
           <div className="flex flex-row space-x-2 items-center">

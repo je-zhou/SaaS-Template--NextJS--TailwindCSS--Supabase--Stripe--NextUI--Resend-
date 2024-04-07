@@ -63,7 +63,7 @@ export default function TechStackDemo() {
       <LampContainer>
         <></>
       </LampContainer>
-      <div className='-mt-40 grid grid-cols-5'>
+      <div className='-mt-60 grid grid-cols-5'>
         <div className='z-50 col-span-2 pl-8 space-y-2'>
           <h1 className='text-2xl font-medium pb-4 opacity-65'>The Tech Stack</h1>
           <p className='opacity-75'>A modern tech stack to handle everything from payments to building UIs at lighting speed ⚡</p>

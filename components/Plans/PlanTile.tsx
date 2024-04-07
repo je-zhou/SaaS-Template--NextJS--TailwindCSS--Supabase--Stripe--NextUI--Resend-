@@ -19,7 +19,7 @@ export default async function PlanTile({stripeProduct}: PlanTileProps) {
   }
 
   return (
-    <div className="divide-y bg-card rounded-2xl border border-foreground/20 shadow-sm max-w-xs">
+    <div className="divide-y bg-card rounded-2xl border border-foreground/20 shadow-sm max-w-sm">
       <div className="p-6 sm:px-8 h-96 flex flex-col justify-between">
         <div>
           <h2 className="text-lg font-medium ">
@@ -31,16 +31,15 @@ export default async function PlanTile({stripeProduct}: PlanTileProps) {
         <div>
           <p className="mt-2 sm:mt-4">
             <strong className="text-3xl font-bold sm:text-4xl">${(unitAmount/100).toFixed(2)} </strong>
-            <span className="text-sm font-normal opacity-50">{recurring ? "/"+priceObj?.recurring?.interval : "1 time fee" }</span>
+            <span className="text-sm font-normal opacity-50">{recurring ? "/"+priceObj?.recurring?.interval : "one time fee" }</span>
           </p>
           <Button
-            className="mt-4 w-full rounded border border-cyan-500 bg-cyan-500 text-center text-sm font-medium text-white hover:bg-transparent hover:text-cyan-500 active:text-cyan-500"
+            className="mt-4 w-full rounded border border-primary bg-primary text-center text-sm font-medium text-white hover:bg-transparent hover:text-primary"
             size={"lg"}
           >
             Donate
           </Button>
         </div>
-
       </div>
       <div className="p-6 sm:px-8">
         <p className="text-lg font-medium sm:text-xl opacity-80">What's included:</p>

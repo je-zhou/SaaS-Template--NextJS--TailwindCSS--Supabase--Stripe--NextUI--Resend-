@@ -24,10 +24,10 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground flex items-center justify-center w-full">
         <Providers>
-            <main className="min-h-screen flex flex-col items-center max-w-screen-2xl w-full">
-              {children}
-              <Toaster />
-            </main>
+          <main className="min-h-screen flex flex-col items-center max-w-screen-2xl w-full">
+            {children}
+            <Toaster />
+          </main>
         </Providers>
       </body>
 
