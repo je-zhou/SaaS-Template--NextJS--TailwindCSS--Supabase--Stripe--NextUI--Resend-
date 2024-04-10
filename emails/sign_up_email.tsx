@@ -6,6 +6,7 @@ interface SignUpEmailProps {
 }
 
 
+
 export default function SignUpEmail({email}: SignUpEmailProps) {
   return (
     <Html lang="en">
