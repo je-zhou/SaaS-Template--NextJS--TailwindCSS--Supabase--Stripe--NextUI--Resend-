@@ -17,7 +17,7 @@ export default function NextJS() {
             <p>NextJS</p>
           </div>
         </TextRevealCardTitle>
-        <TextRevealCardDescription>
+        <TextRevealCardDescription className="leading-relaxed">
           {`Next.js is a JavaScript framework primarily used for frontend development, offering server-side rendering and static site generation. 
           Additionally, it supports backend tasks through API routes, allowing developers to create RESTful or GraphQL APIs within the same project, 
           making it an efficient choice for building integrated web applications.`}

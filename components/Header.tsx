@@ -3,12 +3,9 @@ import { motion } from "framer-motion";
 import { IconBrandGithub, IconBrandInstagram, IconBrandMedium } from "@tabler/icons-react";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 import Code from "./Code";
-import { Button } from "./ui/button";
-import Link from "next/link";
 
 export default function HeaderDemo() {
   return (
-    <HeroHighlight className="h-[50rem] md:h-[90vh] flex items-center">
       <motion.h1
         initial={{
           opacity: 0,
@@ -22,16 +19,16 @@ export default function HeaderDemo() {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="px-4 text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-tight md:leading-relaxed lg:leading-snug text-center mx-auto "
+        className="px-4 leading-tight text-center mx-auto min-h-screen w-fit h-full flex items-center "
       >
-        <div className="space-y-8 flex flex-col items-center">
-          <div>
+        <div className="space-y-8 sm:space-y-12 flex flex-col items-center">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold ">
             The ultimate SaaS template to start {" "}
             <Highlight className="text-black dark:text-white">
               shipping code fast
             </Highlight>
-          </div>
-          <p className="text-base md:text-lg lg:text-xl max-w-md md:max-w-lg lg:max-w-xl font-normal">Stop wasting time with the set up. Start building powerful modern web apps in seconds.</p>
+          </h1>
+          <h2 className="text-base md:text-xl lg:text-2xl max-w-md md:max-w-lg lg:max-w-xl font-normal opacity-80 sm:pb-12">Stop wasting time with the set up. Start building powerful modern web apps in seconds.</h2>
           <Code className="hidden md:flex justify-center pr-14" code={`git clone https://github.com/je-zhou/The-Solopreneur-Saas-Template.git`}/>
           <Code className="flex md:hidden justify-center pr-14" code={`git clone ...`} copyText={"git clone https://github.com/je-zhou/The-Solopreneur-Saas-Template.git"}/>
           {/* <Link href={"https://github.com/je-zhou/The-Solopreneur-Saas-Template"}>
@@ -50,6 +47,6 @@ export default function HeaderDemo() {
           </div>
         </div>
       </motion.h1>
-    </HeroHighlight>  
+
   );
 }

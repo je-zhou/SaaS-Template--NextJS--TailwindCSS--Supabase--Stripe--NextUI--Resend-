@@ -62,9 +62,9 @@ export default function TechStackDemo() {
   return (
       <div className='grid grid-cols-1 md:grid-cols-5 max-w-screen-2xl gap-4 px-8'>
         <div className='z-50 md:col-span-2 pl-8 space-y-2'>
-          <h1 className='text-2xl md:text-3xl lg:text-4xl pb-4 opacity-65'>The Tech Stack</h1>
-          <p className='md:text-lg lg:text-xl opacity-50'>A modern tech stack to handle everything from payments to building UIs at lighting speed ⚡</p>
-          <div className='pt-5'>
+          <h1 className='text-2xl md:text-3xl lg:text-4xl font-semibold opacity-90'>The Tech Stack</h1>
+          <p className='md:text-lg lg:text-xl opacity-80 '>A modern tech stack to handle everything from payments to building UIs at lighting speed ⚡</p>
+          <div className='pt-5 opacity-60'>
             <FollowerPointerWrapper
               className='py-2'
               title={

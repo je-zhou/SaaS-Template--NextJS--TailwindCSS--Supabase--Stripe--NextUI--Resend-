@@ -58,6 +58,7 @@ export default async function PlanTile({stripeProduct, stripePrice}: PlanTilePro
             <span className="text-sm font-normal opacity-50">{recurring ? "/"+stripePrice?.recurring?.interval : "one time fee" }</span>
           </p>
           <Button
+            type='button'
             className="mt-4 w-full rounded border border-primary bg-primary/90 text-center text-sm font-medium hover:bg-transparent hover:text-primary"
             size={"lg"}
             onClick={() => onCheckout()}

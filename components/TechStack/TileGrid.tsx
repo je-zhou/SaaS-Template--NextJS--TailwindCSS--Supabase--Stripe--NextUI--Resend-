@@ -54,7 +54,7 @@ export const BrandGrid = ({
           <Card className="bg-card relative z-20 rounded-2xl">
             <CardHeader className="h-40">
               <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
+              <CardDescription  className="leading-relaxed pt-2">{item.description}</CardDescription>
             </CardHeader>
           </Card>
         </Link>

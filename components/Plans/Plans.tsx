@@ -1,8 +1,8 @@
-import { getStripeProducts } from '@/actions/getStripeProducts';
+import { getStripeProducts } from '@/actions/stripe/getStripeProducts';
 import React from 'react'
 import PlanTile from './PlanTile';
 import { cn } from '@/libs/utils';
-import { getStripePrice } from '@/actions/getStripePrice';
+import { getStripePrice } from '@/actions/stripe/getStripePrice';
 
 export default async function Plans() {
   const products = await getStripeProducts(3);
@@ -17,8 +17,8 @@ export default async function Plans() {
 
   return (
     <div className="max-w-screen-xl px-8 py-8 sm:py-12 lg:px-8 lg:py-16 flex flex-col items-center space-y-4">
-      <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-65">Donate</h1>
-      <p className="md:text-lg lg:text-xl opacity-50 max-w-2xl text-center">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl opacity-90 font-semibold">Donate</h1>
+      <p className="md:text-lg lg:text-xl opacity-80 max-w-4xl text-center leading-relaxed">
         Has this template helped you out and you want to show your thanks? 
         A (completely optional) donation would be much appreciated! Coding is hard work 😅.
       </p>

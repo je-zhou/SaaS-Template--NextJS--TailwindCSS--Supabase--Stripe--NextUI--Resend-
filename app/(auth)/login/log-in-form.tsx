@@ -57,10 +57,10 @@ export function LogInForm() {
       });
 
       if (error) {
-        console.log(error)
+
         toast({
-          title: "Error",
-          description: "Something went wrong with the Sign In process. Check your console logs if you are dev. Check back later if not.",
+          title: error.message,
+          
         })
 
 
@@ -71,15 +71,14 @@ export function LogInForm() {
           description: "Logging you in...",
         })
   
-        router.push("/");
-
+        router.push("/protected");
+        router.refresh();
       }
 
     } catch (e) {
-      console.log(e)
       toast({
         title: "Error",
-        description: "Something went wrong. Check your console logs if you are dev. Check back later if not.",
+        description: "Couldn't log you in"
       })
     } finally {
       setLoading(false);
@@ -91,7 +90,7 @@ export function LogInForm() {
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to The Solopreneur
       </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+      <p className="text-neutral-600 text-sm max-w-sm  mt-2 dark:text-neutral-300">
         Log in to receive updates and notifications of the latest blog updates!
       </p>
       <Form {...form}>
@@ -132,7 +131,7 @@ export function LogInForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input disabled={loading} placeholder="lebron.james@lalakers.com" {...field} />
+                  <Input className="outline outline-1 outline-black/10" disabled={loading} placeholder="lebron.james@lalakers.com" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -145,7 +144,7 @@ export function LogInForm() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input disabled={loading} placeholder="••••••••" {...field} type="password" />
+                  <Input className="outline outline-1 outline-black/10" disabled={loading} placeholder="••••••••" {...field} type="password" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -153,7 +152,7 @@ export function LogInForm() {
           />
           <div className="h-1"></div>
           <Button
-            className=" bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className=" bg-gradient-to-br relative group/btn from-primary dark:from-primary/90 dark:to-primary/90 to-primary/60 block w-full text-primary-foreground rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
             disabled={loading} 
           >
@@ -191,7 +190,7 @@ export function LogInForm() {
       </Form>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       <div className="text-sm text-right">
-        <p>Don't have an account? <Link href={"/sign-up"} className="underline">Sign Up</Link> instead</p>
+        <p>Don't have an account? <Link href={"/sign-up"} className="underline text-primary">Sign Up</Link> instead</p>
       </div>
     </div>
   );

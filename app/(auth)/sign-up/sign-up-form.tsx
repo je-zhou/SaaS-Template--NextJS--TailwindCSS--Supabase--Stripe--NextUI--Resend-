@@ -7,6 +7,8 @@ import { z } from "zod"
 import {
   IconBrandGithub,
   IconBrandGoogle,
+  IconCheck,
+  IconX,
 } from "@tabler/icons-react";
 
 import { Button } from "@/components/ui/button"
@@ -24,14 +26,15 @@ import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast";
 import { createClient } from "@/libs/clients/supabase/client";
 import { useRouter } from "next/navigation";
-
+import axios from "axios";
+import { cn } from "@/libs/utils";
 
 const formSchema = z.object({
   // Lets ship fast don't need name 
   // firstName: z.string().min(1, {message: "Please enter at least 1 character"}),
   // lastName: z.string().min(2, {message: "Please enter at least 1 character"}),
   email: z.string().email({message: "Please enter a valid email"}),
-  password: z.string().min(6, {message: "Password must include more than 6 characters"}),
+  password: z.string().regex(new RegExp(/^(?=.*[A-Z])(?=.*\d).{8,}$/), "Password should have: minimum eight characters, at least one letter and one number") .min(6, {message: "Password must include more than 6 characters"}),
   confirmPassword: z.string().min(6, {message: "Password must include more than 6 characters"}),
 }).refine(data => data.password == data.confirmPassword, {
   message: "Passwords must match",
@@ -65,7 +68,7 @@ export function SignupForm({origin} : SignupFormProps) {
     setLoading(true);
 
     try {
-      await supabase.auth.signUp({
+      const {data: {user, session}, error} = await supabase.auth.signUp({
         email: values.email,
         password : values.password,
         options: {
@@ -77,6 +80,8 @@ export function SignupForm({origin} : SignupFormProps) {
         title: "Success!",
         description: "Check your email for next steps",
       })
+
+      await axios.post("/api/user", {email: values.email, user: user});
 
       setLoading(false);
       router.push("/login");
@@ -95,10 +100,10 @@ export function SignupForm({origin} : SignupFormProps) {
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-        Welcome to The Solopreneur
+        Welcome to Personif<span className="text-primary">.ai</span>
       </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Sign up to receive updates and notifications of the latest blog updates!
+      <p className="text-neutral-600 text-sm max-w-sm  mt-2 dark:text-neutral-300">
+        We're excited to help you land the job of your dreams. Let's get started!
       </p>
       <Form {...form}>
         <form className="my-8 space-y-4" onSubmit={form.handleSubmit(handleSubmit)}>
@@ -138,7 +143,7 @@ export function SignupForm({origin} : SignupFormProps) {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input disabled={loading} placeholder="lebron.james@lalakers.com" {...field} />
+                  <Input className="outline outline-1 outline-black/10" disabled={loading} placeholder="lebron.james@lalakers.com" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -151,7 +156,24 @@ export function SignupForm({origin} : SignupFormProps) {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input disabled={loading} placeholder="••••••••" {...field} type="password" />
+                  <div className=" space-y-3">
+                    <Input className="outline outline-1 outline-black/10" disabled={loading} placeholder="••••••••" {...field} type="password" />
+                    <div className="text-xs">
+                      <div className={cn("flex flex-row items-center space-x-1", field.value.length >= 8 ? "text-primary" : "opacity-50")}>
+                        {field.value.length >= 8 ? <IconCheck className="h-4 w-4"/> : <IconX className="h-4 w-4"/>}
+                        <p>Minimum 8 characters</p>
+                      </div>
+                      <div className={cn("flex flex-row items-center space-x-1", /[A-Z]/.test(field.value) ? "text-primary" : "opacity-50")}>
+                        {/[A-Z]/.test(field.value) ? <IconCheck className="h-4 w-4"/> : <IconX className="h-4 w-4"/>}
+                        <p>Contain at least 1 uppercase letter</p>
+                      </div>
+                      <div className={cn("flex flex-row items-center space-x-1", /\d/.test(field.value) ? "text-primary" : "opacity-50")}>
+                        {/\d/.test(field.value) ? <IconCheck className="h-4 w-4"/> : <IconX className="h-4 w-4"/>}
+                        <p>Contain at least 1 number</p>
+                      </div>
+                    </div>         
+                  </div>
+
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -164,7 +186,7 @@ export function SignupForm({origin} : SignupFormProps) {
               <FormItem>
                 <FormLabel>Confirm password</FormLabel>
                 <FormControl>
-                  <Input disabled={loading} placeholder="••••••••" {...field} type="password" />
+                  <Input className="outline outline-1 outline-black/10" disabled={loading} placeholder="••••••••" {...field} type="password" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -172,7 +194,7 @@ export function SignupForm({origin} : SignupFormProps) {
           />
           <div className="h-1"></div>
           <Button
-            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className=" bg-gradient-to-br relative group/btn from-primary dark:from-primary/90 dark:to-primary/90 to-primary/60 block w-full text-primary-foreground rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
             disabled={loading} 
           >
@@ -210,7 +232,7 @@ export function SignupForm({origin} : SignupFormProps) {
       </Form>
       <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       <div className="text-sm text-right">
-        <p>Already have an account? <Link href={"/login"} className="underline">Log in</Link> instead</p>
+        <p>Already have an account? <Link href={"/login"} className="underline text-primary">Log in</Link> instead</p>
       </div>
     </div>
   );

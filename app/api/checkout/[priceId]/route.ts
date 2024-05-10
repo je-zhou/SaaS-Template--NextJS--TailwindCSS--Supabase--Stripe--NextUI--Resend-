@@ -16,8 +16,8 @@ export async function POST(
         },
       ],
       mode: 'payment',
-      success_url: `${req.url}`,
-      cancel_url: `${req.url}`,
+      success_url: `${req.url.replace(`/api/checkout/${params.priceId}`, "/protected")}`,
+      cancel_url: `${req.url.replace(`/api/checkout/${params.priceId}`, "/")}`,
     });
 
     return NextResponse.json({url: session.url}, {

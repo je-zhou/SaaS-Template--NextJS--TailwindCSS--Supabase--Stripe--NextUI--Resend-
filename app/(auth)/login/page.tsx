@@ -1,9 +1,14 @@
-
 import BackButton from "@/components/ui/back-button";
 import { LogInForm } from "./log-in-form";
+import { getSignedInUser } from "@/actions/auth/getSignedInUser";
+import { redirect } from "next/navigation";
 
-export default function Login(){
+export default async function Login(){
+  const user = await getSignedInUser()
 
+  if (user) {
+    return redirect("/protected");
+  }
 
   return (
     <div className='min-h-[90vh] flex items-center justify-center px-4'>

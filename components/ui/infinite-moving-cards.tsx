@@ -73,14 +73,14 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden bg-background [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-7xl w-[80vw] md:w-[90vw] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+          " flex min-w-full shrink-0 gap-2 lg:gap-4 py-2 lg:py-4 w-max flex-nowrap",
           start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
@@ -96,7 +96,7 @@ export const InfiniteMovingCards = ({
 export function MovingCardTile({item, className} : {item: {quote: string, name: string, title: string}, className?:string}) {
   return (
     <li
-      className={cn("bg-card max-w-md relative rounded-2xl border flex-shrink-0 border-foreground/10 px-8 py-6", className)}
+      className={cn("bg-card max-w-xs lg:max-w-md relative rounded-2xl border flex-shrink-0 border-foreground/10 p-4 lg:px-8 lg:py-6", className)}
       key={item.name}
     >
       <blockquote>
@@ -107,7 +107,7 @@ export function MovingCardTile({item, className} : {item: {quote: string, name: 
         <span className=" relative z-20 text-sm leading-[1.6] opacity-70 font-normal">
           {item.quote}
         </span>
-        <div className="relative z-20 mt-6 flex flex-row items-center">
+        <div className="relative z-20 mt-3 lg:mt-6 flex flex-row items-center">
           <span className="flex flex-col gap-1">
             <span className=" text-sm leading-[1.6] opacity-40 font-normal">
               {item.name}
