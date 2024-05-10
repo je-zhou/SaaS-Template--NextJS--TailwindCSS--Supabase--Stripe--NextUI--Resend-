@@ -12,7 +12,7 @@ interface PlanTileProps {
   stripePrice: Stripe.Price | undefined
 }
 
-export default async function PlanTile({stripeProduct, stripePrice}: PlanTileProps) {
+export default function PlanTile({stripeProduct, stripePrice}: PlanTileProps) {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast()
   
